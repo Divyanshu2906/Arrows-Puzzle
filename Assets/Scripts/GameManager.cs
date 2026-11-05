@@ -58,10 +58,11 @@ public class GameManager : MonoBehaviour
 
     void FitCamera()
     {
-        float halfH = (bounds.size.y + 3.5f) * 0.5f;
-        float halfW = (bounds.size.x + 2f) * 0.5f / cam.aspect;
+        
+        float halfH = bounds.size.y * 0.5f / 0.76f;
+        float halfW = (bounds.size.x + 1f) * 0.5f / cam.aspect;
         cam.orthographicSize = Mathf.Max(halfH, halfW);
-        camBase = new Vector3(bounds.center.x, bounds.center.y + cam.orthographicSize * 0.08f, -10f);
+        camBase = new Vector3(bounds.center.x, bounds.center.y, -10f);
         if (!shaking) cam.transform.position = camBase;
     }
 

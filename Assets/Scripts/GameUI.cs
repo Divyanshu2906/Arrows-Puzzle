@@ -35,7 +35,7 @@ public class GameUI : MonoBehaviour
         }
         SetLives(lives);
 
-        MakeButton("HintButton", transform, new Vector2(0.5f, 0f), new Vector2(0, 120), new Vector2(360, 120), "HINT", new Color(0.2f, 0.5f, 0.95f), onHint);
+        MakeButton("HintButton", transform, new Vector2(0.5f, 0f), new Vector2(0, 75), new Vector2(280, 90), "HINT", new Color(0.2f, 0.5f, 0.95f), onHint);
 
         popup = new GameObject("Popup", typeof(RectTransform), typeof(Image));
         popup.transform.SetParent(transform, false);
@@ -88,6 +88,6 @@ public class GameUI : MonoBehaviour
         var b = rt.gameObject.AddComponent<Button>();
         b.targetGraphic = img;
         b.onClick.AddListener(() => onClick());
-        MakeText("Label", rt, new Vector2(0.5f, 0.5f), Vector2.zero, size, label, 56, Color.white);
+        MakeText("Label", rt, new Vector2(0.5f, 0.5f), Vector2.zero, size, label, Mathf.RoundToInt(size.y * 0.45f), Color.white);
     }
 }
